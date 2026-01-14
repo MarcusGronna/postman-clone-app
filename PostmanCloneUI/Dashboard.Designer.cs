@@ -1,6 +1,6 @@
 ﻿namespace PostmanCloneUI
 {
-    partial class Desktop
+    partial class Dashboard
     {
         /// <summary>
         ///  Required designer variable.

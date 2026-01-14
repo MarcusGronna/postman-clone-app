@@ -1,8 +1,8 @@
 namespace PostmanCloneUI
 {
-    public partial class Desktop : Form
+    public partial class Dashboard : Form
     {
-        public Desktop()
+        public Dashboard()
         {
             InitializeComponent();
         }

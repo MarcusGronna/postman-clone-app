@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Nodes;
+﻿using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace PostmanCloneLibrary;
 
@@ -13,11 +14,15 @@ public class ApiCalls
         if (response.IsSuccessStatusCode) {
 
             string json = await response.Content.ReadAsStringAsync();
-            return json;
+            var jsonElement = JsonSerializer.Deserialize<JsonElement>(json);
+            string prettyJson = JsonSerializer.Serialize(jsonElement,
+                    new JsonSerializerOptions { WriteIndented = true});
+
+            return prettyJson;
         }
         else
         {
-            return "Bad request" + response.StatusCode;
+            return "Bad request: " + response.StatusCode;
         }
     }
 }

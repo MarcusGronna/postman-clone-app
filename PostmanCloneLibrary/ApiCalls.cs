@@ -1,5 +1,4 @@
 ﻿using System.Text.Json;
-using System.Text.Json.Nodes;
 
 namespace PostmanCloneLibrary;
 
@@ -21,8 +20,8 @@ public class ApiCalls : IApiCalls
 
             if (formatOutput)
             {
-            var jsonElement = JsonSerializer.Deserialize<JsonElement>(json);
-            string prettyJson = JsonSerializer.Serialize(jsonElement,
+                var jsonElement = JsonSerializer.Deserialize<JsonElement>(json);
+                string prettyJson = JsonSerializer.Serialize(jsonElement,
                         new JsonSerializerOptions { WriteIndented = true });
                 return prettyJson;
             }

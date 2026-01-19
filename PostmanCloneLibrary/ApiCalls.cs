@@ -3,7 +3,7 @@ using System.Text.Json.Nodes;
 
 namespace PostmanCloneLibrary;
 
-public class ApiCalls
+public class ApiCalls : IApiCalls
 {
     private readonly HttpClient client = new();
 

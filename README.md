@@ -18,3 +18,4 @@ Postman Clone provides a user-friendly interface for making GET-requests to APIs
 
 3. Fill in your API URL and hit Go:
 
+<img src="Images/screenshot2.png" alt="Postman Clone App results" width="500">

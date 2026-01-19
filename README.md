@@ -14,8 +14,16 @@ Postman Clone provides a user-friendly interface for making GET-requests to APIs
 1. Download the executable file from the release section.
 2. When the application launches it should look like this:
 
-![Postman Clone App ready to run](Images/screenshot1.png "Ready to Run")
+<img src="Images/screenshot1.png" alt="Postman Clone App ready to run" width="500">
 
 3. Fill in your API URL and hit Go:
 
 <img src="Images/screenshot2.png" alt="Postman Clone App results" width="500">
+
+## Upcoming Changes
+* Adding POST, PUT, PATCH and DELETE functionality
+* Adding API headers
+* Handling API authentication
+* Adding Dependency Injection
+* Adding Logging
+* Create a web-based user interface for the application

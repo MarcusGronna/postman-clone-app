@@ -7,12 +7,13 @@ public partial class Dashboard : Form
 {
     // https://jsonplaceholder.typicode.com/todos for mockdata 
 
-    private readonly ApiCalls _api;
+    private readonly IApiCalls _api;
     public Dashboard()
     {
         InitializeComponent();
         _api = new ApiCalls();
     }
+
     private async void callApi_Click(object sender, EventArgs e)
     {
         string url = inputTextBox.Text;

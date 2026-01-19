@@ -1,4 +1,3 @@
-using System.Text.Json.Nodes;
 using PostmanCloneLibrary;
 
 namespace PostmanCloneUI;
@@ -16,12 +15,18 @@ public partial class Dashboard : Form
 
     private async void callApi_Click(object sender, EventArgs e)
     {
+        systemStatus.Text = "Calling Api...";
+        outputTextBox.Text = "";
         string url = inputTextBox.Text;
+
+        if (_api.IsValidUrl(url) == false)
+        {
+            systemStatus.Text = "Invalid url";
+            return;
+        }
 
         try
         {
-            systemStatus.Text = "Calling Api...";
-
             var respone = await _api.CallApiAsync(url);
 
             outputTextBox.Text = respone;

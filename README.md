@@ -20,6 +20,14 @@ Postman Clone provides a user-friendly interface for making HTTP-requests to API
 
 <img src="Images/screenshot2.png" alt="Postman Clone App results" width="500">
 
+4. Try out the POST functionality to by adding a body
+
+<img src="Images/screenshot3.png" alt="Postman Clone App Post Body" width="500">
+
+5. Or try using the PUT or other HTTP verbs
+
+<img src="Images/screenshot4.png" alt="Postman Clone App Put Body" width="500">
+
 ## Upcoming Changes
 * Adding API headers
 * Handling API authentication

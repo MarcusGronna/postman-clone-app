@@ -8,10 +8,10 @@ public partial class Dashboard : Form
     //  https://jsonplaceholder.typicode.com/posts
     //      method: "POST",
     //      body:{
-      //        "title": "foo",
-      //        "body": "bar",
-      //        "userId": 1,
-      //        }
+    //        "title": "foo",
+    //        "body": "bar",
+    //        "userId": 1,
+    //        }
 
     private readonly IApiCalls _api;
     public Dashboard()
@@ -26,7 +26,9 @@ public partial class Dashboard : Form
         callData.SelectedTab = resultTab;
         systemStatus.Text = "Calling Api...";
         resultTextBox.Text = "";
+
         string url = urlInput.Text;
+        string body = inputTextBox.Text;
 
         if (_api.IsValidUrl(url) == false)
         {
@@ -37,11 +39,19 @@ public partial class Dashboard : Form
 
         try
         {
-            var respone = await _api.CallApiAsync(url);
+            switch (httpVerbSelection.Text)
+            {
+                case "GET": 
+                    resultTextBox.Text = await _api.CallApiAsync(url);
+                    break;
+                case "POST":
+                    resultTextBox.Text = await _api.CallApiAsync(url, true, HttpAction.POST, body);
+                    break;
+                default: 
+                    break;
+            }
 
-            resultTextBox.Text = respone;
             systemStatus.Text = "Ready";
-
         }
         catch (Exception ex)
         {

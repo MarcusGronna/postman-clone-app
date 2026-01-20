@@ -5,7 +5,7 @@ namespace PostmanCloneUI;
 public partial class Dashboard : Form
 {
     // https://jsonplaceholder.typicode.com/todos for mockdata 
-    //  https://jsonplaceholder.typicode.com/posts
+    // https://jsonplaceholder.typicode.com/posts
     //      method: "POST",
     //      body:{
     //        "title": "foo",
@@ -17,7 +17,7 @@ public partial class Dashboard : Form
     public Dashboard()
     {
         InitializeComponent();
-        httpVerbSelection.Text = HttpAction.GET.ToString();
+        httpVerbSelection.Text = "GET";
         _api = new ApiCalls();
     }
 
@@ -27,30 +27,23 @@ public partial class Dashboard : Form
         systemStatus.Text = "Calling Api...";
         resultTextBox.Text = "";
 
-        string url = urlInput.Text;
-        string body = inputTextBox.Text;
-
-        if (_api.IsValidUrl(url) == false)
+        if (_api.IsValidUrl(urlInput.Text) == false)
         {
             systemStatus.Text = "Invalid url";
             resultTextBox.Text = "Invalid url...";
             return;
         }
 
+        HttpAction httpAction;
+        if (Enum.TryParse(httpVerbSelection.SelectedItem!.ToString(), out httpAction) == false)
+        {
+            systemStatus.Text = "Invalid HTTP Verb";
+            return;
+        }
+
         try
         {
-            switch (httpVerbSelection.Text)
-            {
-                case "GET": 
-                    resultTextBox.Text = await _api.CallApiAsync(url);
-                    break;
-                case "POST":
-                    resultTextBox.Text = await _api.CallApiAsync(url, true, HttpAction.POST, body);
-                    break;
-                default: 
-                    break;
-            }
-
+            resultTextBox.Text = await _api.CallApiAsync(urlInput.Text, inputTextBox.Text, httpAction);
             systemStatus.Text = "Ready";
         }
         catch (Exception ex)

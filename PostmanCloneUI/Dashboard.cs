@@ -17,18 +17,21 @@ public partial class Dashboard : Form
     public Dashboard()
     {
         InitializeComponent();
+        httpVerbSelection.Text = HttpAction.GET.ToString();
         _api = new ApiCalls();
     }
 
     private async void callApi_Click(object sender, EventArgs e)
     {
+        callData.SelectedTab = resultTab;
         systemStatus.Text = "Calling Api...";
-        outputTextBox.Text = "";
-        string url = inputTextBox.Text;
+        resultTextBox.Text = "";
+        string url = urlInput.Text;
 
         if (_api.IsValidUrl(url) == false)
         {
             systemStatus.Text = "Invalid url";
+            resultTextBox.Text = "Invalid url...";
             return;
         }
 
@@ -36,13 +39,13 @@ public partial class Dashboard : Form
         {
             var respone = await _api.CallApiAsync(url);
 
-            outputTextBox.Text = respone;
+            resultTextBox.Text = respone;
             systemStatus.Text = "Ready";
-                
+
         }
         catch (Exception ex)
         {
-            outputTextBox.Text = "Error: " + ex.Message;
+            resultTextBox.Text = "Error: " + ex.Message;
             systemStatus.Text = "Error";
         }
     }
@@ -64,6 +67,11 @@ public partial class Dashboard : Form
 
 
     private void textboxLabel_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
     {
 
     }

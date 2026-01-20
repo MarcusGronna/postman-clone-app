@@ -5,6 +5,13 @@ namespace PostmanCloneUI;
 public partial class Dashboard : Form
 {
     // https://jsonplaceholder.typicode.com/todos for mockdata 
+    //  https://jsonplaceholder.typicode.com/posts
+    //      method: "POST",
+    //      body:{
+      //        "title": "foo",
+      //        "body": "bar",
+      //        "userId": 1,
+      //        }
 
     private readonly IApiCalls _api;
     public Dashboard()

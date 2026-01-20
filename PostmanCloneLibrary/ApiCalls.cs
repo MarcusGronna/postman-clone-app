@@ -12,7 +12,12 @@ public class ApiCalls : IApiCalls
         string? body = null
         )
     {
-        var response = await client.GetAsync(url);
+        var response = httpAction switch
+        {
+            HttpAction.GET => await client.GetAsync(url),
+            HttpAction.POST => await client.PostAsync(url, new StringContent(body!, System.Text.Encoding.UTF8, "application/json")),
+            _ => throw new NotImplementedException()
+        };
 
         if (response.IsSuccessStatusCode)
         {

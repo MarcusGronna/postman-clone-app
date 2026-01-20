@@ -2,7 +2,7 @@
 
 This project is a follow-along to Tim Coreys tutorial for making a portfoli project, which is why I can not take any credits for the code. Though I learned a lot of new things and filosophy about the building process of applications and their scalability. For me it was mostly for trying out WinForms and getting accustomed to Visual Studio 2026.
 
-Postman Clone provides a user-friendly interface for making GET-requests to APIs and viewing the responses in formatted JSON. Ideal for developers and testers, this tool simplifies API interaction and debugging, helping you efficiently validate and troubleshoot your API calls.
+Postman Clone provides a user-friendly interface for making HTTP-requests to APIs and viewing the responses in formatted JSON. Ideal for developers and testers, this tool simplifies API interaction and debugging, helping you efficiently validate and troubleshoot your API calls. It supports full CRUD.
 
 ## Technologies Used
 * C#
@@ -21,7 +21,6 @@ Postman Clone provides a user-friendly interface for making GET-requests to APIs
 <img src="Images/screenshot2.png" alt="Postman Clone App results" width="500">
 
 ## Upcoming Changes
-* Adding POST, PUT, PATCH and DELETE functionality
 * Adding API headers
 * Handling API authentication
 * Adding Dependency Injection

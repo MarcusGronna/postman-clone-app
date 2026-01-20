@@ -8,7 +8,8 @@ public class ApiCalls : IApiCalls
 
     public async Task<string> CallApiAsync(string url,
         bool formatOutput = true,
-        HttpAction httpAction = HttpAction.GET
+        HttpAction httpAction = HttpAction.GET,
+        string? body = null
         )
     {
         var response = await client.GetAsync(url);

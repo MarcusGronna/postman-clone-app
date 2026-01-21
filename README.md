@@ -16,31 +16,31 @@ Postman Clone provides a user-friendly interface for making HTTP-requests to API
 
 <img src="Images/screenshot1.png" alt="Postman Clone App ready to run" width="500">
 
-3. Fill in your API URL and hit Go.
+3. Fill in your API URL and hit Go.<br>
    Example url: https://jsonplaceholder.typicode.com/posts   
 
 <img src="Images/screenshot2.png" alt="Postman Clone App results" width="500">
 
-4. Try out the POST functionality to by adding a body
-   Example url: https://jsonplaceholder.typicode.com/posts
+4. Try out the POST functionality to by adding a body.<br>
+   Example url: https://jsonplaceholder.typicode.com/posts<br>
    Example body:
   ```
   {
-   "title": "foo",
-   "body": "bar",
+   "title": "This is the test title",
+   "body": "This is the test body",
    "userId": 1
   }
 ```
 
 <img src="Images/screenshot3.png" alt="Postman Clone App Post Body" width="500">
 
-5. Or try using the PUT or other HTTP verbs.
-   Example url: https://jsonplaceholder.typicode.com/posts
+5. Or try using the PUT or other HTTP verbs.<br>
+   Example url: https://jsonplaceholder.typicode.com/posts<br>
    Example body:
  ```
   {
-   "title": "foo",
-   "body": "bar",
+   "title": "This is the test title",
+   "body": "This is the test body",
    "userId": 1
   }
 ```
